@@ -721,7 +721,7 @@
     /* Education grid */
     .edu-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
       margin-top: 1rem;
     }
@@ -937,8 +937,7 @@
   <div class="wrap">
     <span class="section-tag">01 — Sobre mí</span>
     <div class="about-grid">
-      <div>
-        <p class="about-lead">Técnico de sistemas apasionado por la nube y la automatización de infraestructura.</p>
+      <div style="background: rgba(5,8,15,0.55); backdrop-filter: blur(8px); border-radius: 16px; padding: 2rem; border: 1px solid rgba(255,255,255,0.05);">
         <p class="about-body">
           Técnico de sistemas con 8 meses de experiencia real en el Ayuntamiento de Sant Feliu de Llobregat. <br><br>
           Mi objetivo es orientar mi carrera hacia Cloud y DevOps. Me apasiona la infraestructura que sostiene el software moderno y quiero especializarme en ella. </p>
@@ -1083,18 +1082,47 @@
       </a>
 
       <!-- KubeNet -->
-      <a class="project-card glass" href="https://github.com/DaniOrtegon/KubeNet" target="_blank" rel="noopener">
-        <div class="project-tag-row">
-          <span class="project-type">Personal · Kubernetes</span>
-          <span class="project-arrow">↗</span>
-        </div>
-        <div class="project-name">KubeNet</div>
-        <p class="project-desc"> Infraestructura Kubernetes para despliegue de WordPress en Alta Disponibilidad. Implementa un stack completo: MariaDB con replicación, Redis con Sentinel, backups automáticos con Velero y MinIO, escalado event-driven con KEDA, observabilidad con Prometheus + Grafana + Loki y modelo de seguridad Zero Trust con 19 NetworkPolicies. Todo el despliegue está automatizado en un pipeline de 10 fases ejecutable desde cero con tres comandos </p>
-        <div class="project-stack">
-          <span class="stack-chip">Kubernetes</span>
-          <span class="stack-chip">Docker</span>
-          <span class="stack-chip">YAML</span>
-          <span class="stack-chip">kubectl</span>
+      <a class="project-card glass featured" href="https://github.com/DaniOrtegon/KubeNet" target="_blank" rel="noopener">
+        <div class="featured-inner">
+          <div>
+            <div class="project-tag-row">
+              <span class="project-type">Personal · Kubernetes</span>
+              <span class="project-arrow">↗</span>
+            </div>
+            <div class="project-name">KubeNet</div>
+            <p class="project-desc">Infraestructura Kubernetes para despliegue de WordPress en Alta Disponibilidad. Implementa un stack completo: MariaDB con replicación, Redis con Sentinel, backups automáticos con Velero y MinIO, escalado event-driven con KEDA, observabilidad con Prometheus + Grafana + Loki y modelo de seguridad Zero Trust con 19 NetworkPolicies. Todo el despliegue está automatizado en un pipeline de 10 fases ejecutable desde cero con tres comandos.</p>
+            <div class="project-stack">
+              <span class="stack-chip">Kubernetes</span>
+              <span class="stack-chip">Docker</span>
+              <span class="stack-chip">MariaDB</span>
+              <span class="stack-chip">Redis</span>
+              <span class="stack-chip">Prometheus</span>
+              <span class="stack-chip">Grafana</span>
+              <span class="stack-chip">KEDA</span>
+              <span class="stack-chip">Velero</span>
+            </div>
+          </div>
+          <div class="arch-visual">
+            <div class="arch-row">
+              <div class="arch-box hi">NGINX Ingress + TLS</div>
+            </div>
+            <div class="arch-arrow">↓</div>
+            <div class="arch-row">
+              <div class="arch-box hi">WordPress × 2–7 réplicas</div>
+              <div class="arch-box">KEDA autoscaling</div>
+            </div>
+            <div class="arch-arrow">↓</div>
+            <div class="arch-row">
+              <div class="arch-box hi2">MariaDB Primary + Replica</div>
+              <div class="arch-box">Redis Sentinel</div>
+            </div>
+            <div class="arch-arrow">↓</div>
+            <div class="arch-row">
+              <div class="arch-box">Velero + MinIO</div>
+              <div class="arch-box">Prometheus + Grafana</div>
+            </div>
+            <div class="arch-label">Zero Trust · 19 NetworkPolicies · HA</div>
+          </div>
         </div>
       </a>
 
